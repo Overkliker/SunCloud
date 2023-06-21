@@ -43,10 +43,41 @@
         </StackPanel>
 
 
-        <Rectangle Grid.Column="1" Grid.Row="1" Fill="#F8C5B4" Margin="8,0,8,0" Height="158" Opacity="0.75" ClipToBounds="True">
-            <Rectangle.Effect>
-                <DropShadowEffect ShadowDepth="8" BlurRadius="0" Opacity="0.25" Direction="-90"/>
-            </Rectangle.Effect>
-        </Rectangle>
+        <Border
+            BorderBrush="Black"
+            BorderThickness="1.5"
+            Height="158" Width="206"
+            CornerRadius="3"
+            Grid.Column="1" Grid.Row="1" Margin="5, 10 , 5, 0">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="3" Direction="225" Color="Black" Opacity="0.25"/>
+            </Border.Effect>
+        </Border>
+        <Border 
+            Grid.Column="1" Grid.Row="1"
+            CornerRadius="3">
+
+            <Rectangle 
+                Width="206" Height="158"
+                
+                   Opacity="0.75"
+                   Fill="#F8C5B4"
+                  >
+                <!--<Rectangle.Effect>
+                    <DropShadowEffect ShadowDepth="2" Direction="225" Color="Black" Opacity="0.25"/>
+                </Rectangle.Effect>-->
+            </Rectangle>
+        </Border>
+
+
+        <!--
+        <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="1.5" Opacity="0.25" Margin="5,5,5,0">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="20" BlurRadius="40" Opacity="0.25" Direction="-90"/>
+            </Border.Effect>
+        </Border>
+
+        <Rectangle Grid.Column="1" Grid.Row="1" Fill="#F8C5B4" Margin="8,0,8,0" Height="158" Opacity="0.75" ClipToBounds="True" />
+        -->
     </Grid>
 </Window>

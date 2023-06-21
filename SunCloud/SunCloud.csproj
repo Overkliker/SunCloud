@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ElementsForInterface\ElementsForInterface.csproj" />
+    <Folder Include="Model\" />
   </ItemGroup>
 
 </Project>
