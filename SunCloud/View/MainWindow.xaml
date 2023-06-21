@@ -9,29 +9,36 @@
         Icon="https://i.imgur.com/ov43v35.png"
         Title="Выберите город"
         WindowStartupLocation="CenterScreen"
+        ResizeMode="CanResizeWithGrip"
         WindowStyle="None" AllowsTransparency="True" MouseLeftButtonDown="Window_MouseLeftButtonDown">
-    <!-- Здесь пропишем все параметры для кастомного тайтлбара и драгмува -->
 
     <Grid>
         <!-- Разметочку бах -->
         <!-- Колоночки бах -->
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="228*"/>
+            <ColumnDefinition Width="18*"/>
+            <ColumnDefinition Width="175*"/>
+            <ColumnDefinition Width="18*"/>
+            <ColumnDefinition Width="228*"/>
         </Grid.ColumnDefinitions>
         <!-- Строчечки шмяк -->
         <Grid.RowDefinitions>
-            <RowDefinition Height="133*"></RowDefinition>
-            <RowDefinition Height="161*"></RowDefinition>
-            <RowDefinition Height="106*"></RowDefinition>
+            <RowDefinition Height="124*"/>
+            <RowDefinition Height="56*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="28*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="28*"/>
+            <RowDefinition Height="22*"/>
+            <RowDefinition Height="98*"/>
         </Grid.RowDefinitions>
 
         <!-- Фоточка заднего фона -->
-        <Image Grid.ColumnSpan="3" Grid.RowSpan="3" Source="https://i.imgur.com/5hhbL6m.png" Stretch="Fill"/>
+        <Image Grid.ColumnSpan="5" Grid.RowSpan="8" Source="https://i.imgur.com/5hhbL6m.png" Stretch="Fill"/>
 
         <!-- Тайтл бар. Тот что с кнопочками закрыть, свернуть, фулскрин-->
-        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="2" Height="40" Width="120">
+        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="4" Height="40" Width="120">
 
             <Button x:Name="CollapseBtn" Content="-" Width="40" Height="40" Click="CollapseBtn_Click"
                     BorderBrush="Transparent" Background="Transparent"/>
@@ -42,42 +49,61 @@
 
         </StackPanel>
 
-
+        <!--Здеся буит главный блок и его тень-->
         <Border
-            BorderBrush="Black"
-            BorderThickness="1.5"
-            Height="158" Width="206"
+            Grid.Row="1"
             CornerRadius="3"
-            Grid.Column="1" Grid.Row="1" Margin="5, 10 , 5, 0">
-            <Border.Effect>
-                <DropShadowEffect ShadowDepth="3" Direction="225" Color="Black" Opacity="0.25"/>
-            </Border.Effect>
-        </Border>
-        <Border 
-            Grid.Column="1" Grid.Row="1"
-            CornerRadius="3">
+            Grid.RowSpan="6"
+            Grid.ColumnSpan="3"
+            Grid.Column="1">
 
             <Rectangle 
-                Width="206" Height="158"
-                
-                   Opacity="0.75"
-                   Fill="#F8C5B4"
-                  >
-                <!--<Rectangle.Effect>
-                    <DropShadowEffect ShadowDepth="2" Direction="225" Color="Black" Opacity="0.25"/>
-                </Rectangle.Effect>-->
+                Opacity="0.70"
+                Fill="#F9D4C9"
+                MinWidth="206"
+                MinHeight="158"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch">
+                <!--Тень отбрасывается от прямоугольника, а прямоугольник заливается от бордера-->
+                <Rectangle.Effect>
+                    <DropShadowEffect ShadowDepth="3" Direction="225" Color="Black" Opacity="0.25" BlurRadius="10"/>
+                </Rectangle.Effect>
+
             </Rectangle>
         </Border>
 
+        <TextBlock x:Name="MainTitleTbx"
+                   Grid.Row="1" Grid.Column="2"
+                   Height="20" Width="108"
+                   Text="SunClouds"
+                   FontFamily="{DynamicResource JuraFontFamily}"
+                   Foreground="#FFFFFF"
+                   FontSize="20"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
 
-        <!--
-        <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="1.5" Opacity="0.25" Margin="5,5,5,0">
-            <Border.Effect>
-                <DropShadowEffect ShadowDepth="20" BlurRadius="40" Opacity="0.25" Direction="-90"/>
-            </Border.Effect>
-        </Border>
+        <!--Все прямоугольники растягиватся будут вместе с окном. Строго по разметочке-->
+        <Rectangle Grid.Row="1"
+                   Grid.Column="2"
+                   Fill="#FFFFFF"
+                   Opacity="0.50"
+                   VerticalAlignment="Bottom"
+                   Height="1"/>
 
-        <Rectangle Grid.Column="1" Grid.Row="1" Fill="#F8C5B4" Margin="8,0,8,0" Height="158" Opacity="0.75" ClipToBounds="True" />
-        -->
+
+        <!--Эти два наказаны и будут заменены на кнопки-->
+        <Rectangle Grid.Row="3"
+                   Grid.Column="2"
+                   Fill="#87B6CA"
+                   Opacity="0.5"
+                   MinHeight="25"/>
+
+        <Rectangle Grid.Row="5"
+                   Grid.Column="2"
+                   Fill="#87B6CA"
+                   MinHeight="25"/>
+
+        
     </Grid>
 </Window>
