@@ -12,15 +12,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="System.ObjectModel" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="View\Icon.png" />
+    <ProjectReference Include="..\ElementsForInterface\ElementsForInterface.csproj" />
   </ItemGroup>
 
 </Project>
