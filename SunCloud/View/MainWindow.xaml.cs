@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SunCloud.ViewModel;
+using SunCloud.ViewModel.Helpers;
 
 namespace SunCloud
 {
@@ -24,7 +25,7 @@ namespace SunCloud
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new JS();
+            Serializer.Get("Москва");
         }
     }
 }
