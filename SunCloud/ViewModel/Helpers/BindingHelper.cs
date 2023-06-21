@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SunCloud.ViewModel.Helpers
 {
-    internal class BindingHelper : INotifyPropertyChanged
+    public class BindingHelper : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string name = null)
