@@ -24,5 +24,33 @@ namespace SunCloud
         {
             InitializeComponent();
         }
+
+
+        //Тыкаешь на любую область окна и можешь перетаскивать приложение
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+
+        //Кнопка свёртывания приложения
+        private void CollapseBtn_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        //Кнопка полноэкранного режима
+
+        //Кнопка закрытия окна
+        private void btnClose_Click(object sender, RoutedEventArgs e) 
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void FullscreanBtn_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (WindowState == WindowState.Maximized)
+                WindowState = WindowState.Normal;
+            else WindowState = WindowState.Maximized;
+        }
     }
 }

@@ -8,11 +8,26 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Model\" />
+    <None Remove="Fonts\Jura-DemiBold.ttf" />
+    <None Remove="Fonts\Jura-Light.ttf" />
+    <None Remove="Fonts\Jura-Medium.ttf" />
+    <None Remove="Fonts\Jura-Regular.ttf" />
+    <None Remove="View\Icon.png" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="System.ObjectModel" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\Jura-DemiBold.ttf" />
+    <Resource Include="Fonts\Jura-Light.ttf" />
+    <Resource Include="Fonts\Jura-Medium.ttf" />
+    <Resource Include="Fonts\Jura-Regular.ttf" />
   </ItemGroup>
 
 </Project>

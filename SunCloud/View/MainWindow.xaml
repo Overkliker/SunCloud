@@ -1,12 +1,109 @@
 ﻿<Window x:Class="SunCloud.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:cards="clr-namespace:ElementsForInterface;assembly=ElementsForInterface"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SunCloud"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Height="400" Width="666"
+        Icon="https://i.imgur.com/ov43v35.png"
+        Title="Выберите город"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanResizeWithGrip"
+        WindowStyle="None" AllowsTransparency="True" MouseLeftButtonDown="Window_MouseLeftButtonDown">
 
+    <Grid>
+        <!-- Разметочку бах -->
+        <!-- Колоночки бах -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="228*"/>
+            <ColumnDefinition Width="18*"/>
+            <ColumnDefinition Width="175*"/>
+            <ColumnDefinition Width="18*"/>
+            <ColumnDefinition Width="228*"/>
+        </Grid.ColumnDefinitions>
+        <!-- Строчечки шмяк -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="124*"/>
+            <RowDefinition Height="56*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="28*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="28*"/>
+            <RowDefinition Height="22*"/>
+            <RowDefinition Height="98*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Фоточка заднего фона -->
+        <Image Grid.ColumnSpan="5" Grid.RowSpan="8" Source="https://i.imgur.com/5hhbL6m.png" Stretch="Fill"/>
+
+        <!-- Тайтл бар. Тот что с кнопочками закрыть, свернуть, фулскрин-->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="4" Height="40" Width="120">
+
+            <Button x:Name="CollapseBtn" Content="-" Width="40" Height="40" Click="CollapseBtn_Click"
+                    BorderBrush="Transparent" Background="Transparent"/>
+            <cards:Exit x:Name="FullscreanBtn" Width="40" Height="40" />
+            <Button x:Name="btnClose" Content="X" Width="40" Height="40" Click="btnClose_Click"
+                    BorderBrush="Transparent" Background="Transparent"/>
+
+        </StackPanel>
+
+        <!--Здеся буит главный блок и его тень-->
+        <Border
+            Grid.Row="1"
+            CornerRadius="3"
+            Grid.RowSpan="6"
+            Grid.ColumnSpan="3"
+            Grid.Column="1">
+
+            <Rectangle 
+                Opacity="0.70"
+                Fill="#F9D4C9"
+                MinWidth="206"
+                MinHeight="158"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch">
+                <!--Тень отбрасывается от прямоугольника, а прямоугольник заливается от бордера-->
+                <Rectangle.Effect>
+                    <DropShadowEffect ShadowDepth="3" Direction="225" Color="Black" Opacity="0.25" BlurRadius="10"/>
+                </Rectangle.Effect>
+
+            </Rectangle>
+        </Border>
+
+        <TextBlock x:Name="MainTitleTbx"
+                   Grid.Row="1" Grid.Column="2"
+                   Height="20" Width="108"
+                   Text="SunClouds"
+                   FontFamily="{DynamicResource JuraFontFamily}"
+                   Foreground="#FFFFFF"
+                   FontSize="20"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
+
+        <!--Все прямоугольники растягиватся будут вместе с окном. Строго по разметочке-->
+        <Rectangle Grid.Row="1"
+                   Grid.Column="2"
+                   Fill="#FFFFFF"
+                   Opacity="0.50"
+                   VerticalAlignment="Bottom"
+                   Height="1"/>
+
+
+        <!--Эти два наказаны и будут заменены на кнопки-->
+        <Rectangle Grid.Row="3"
+                   Grid.Column="2"
+                   Fill="#87B6CA"
+                   Opacity="0.5"
+                   MinHeight="25"/>
+
+        <Rectangle Grid.Row="5"
+                   Grid.Column="2"
+                   Fill="#87B6CA"
+                   MinHeight="25"/>
+
+        
     </Grid>
 </Window>
