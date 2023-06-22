@@ -6,4 +6,18 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Fonts\Jura-DemiBold.ttf" />
+    <None Remove="Fonts\Jura-Light.ttf" />
+    <None Remove="Fonts\Jura-Medium.ttf" />
+    <None Remove="Fonts\Jura-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\Jura-DemiBold.ttf" />
+    <Resource Include="Fonts\Jura-Light.ttf" />
+    <Resource Include="Fonts\Jura-Medium.ttf" />
+    <Resource Include="Fonts\Jura-Regular.ttf" />
+  </ItemGroup>
+
 </Project>

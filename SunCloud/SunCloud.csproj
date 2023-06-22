@@ -24,6 +24,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ElementsForInterface\ElementsForInterface.csproj" />
+    <ProjectReference Include="..\Themes\Themes.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Fonts\Jura-DemiBold.ttf" />
     <Resource Include="Fonts\Jura-Light.ttf" />
     <Resource Include="Fonts\Jura-Medium.ttf" />
