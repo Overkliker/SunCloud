@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace SunCloud.View
+namespace SunCloud
 {
     /// <summary>
     /// Логика взаимодействия для Main.xaml
@@ -22,6 +22,12 @@ namespace SunCloud.View
         public Main()
         {
             InitializeComponent();
+        }
+
+        //Тыкаешь на любую область окна и можешь перетаскивать приложение
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
         }
     }
 }

@@ -39,14 +39,10 @@
         <Image Grid.ColumnSpan="5" Grid.RowSpan="8" Source="https://i.imgur.com/5hhbL6m.png" Stretch="Fill"/>
 
         <!-- Тайтл бар. Тот что с кнопочками закрыть, свернуть, фулскрин-->
-        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="4" Height="40" Width="120">
-
-            <Button x:Name="CollapseBtn" Content="-" Width="40" Height="40" Click="CollapseBtn_Click"
-                    BorderBrush="Transparent" Background="Transparent"/>
-            <cards:Exit x:Name="FullscreanBtn" Width="40" Height="40" />
-            <Button x:Name="btnClose" Content="X" Width="40" Height="40" Click="btnClose_Click"
-                    BorderBrush="Transparent" Background="Transparent"/>
-
+        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="4" Height="40" Width="120" Margin="0,10,10,0">
+            <cards:Colapse Width="40" Height="40" MouseDoubleClick="CollapseBtn_Click"/>
+            <cards:FullScreen Width="40" Height="40" MouseDoubleClick="FullscreanBtn_Click_1"/>
+            <cards:Exit Grid.Column="4" HorizontalAlignment="Right" VerticalAlignment="Top" Width="40" Height="40" MouseDoubleClick="btnClose_Click"/>
         </StackPanel>
 
         <!--Здеся буит главный блок и его тень-->
@@ -104,6 +100,6 @@
                    Fill="#87B6CA"
                    MinHeight="25"/>
 
-        
+
     </Grid>
 </Window>

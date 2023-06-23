@@ -5,35 +5,36 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ElementsForInterface"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="300"
+             d:DesignHeight="180" d:DesignWidth="120"
              x:Name="UnitControl">
 
     <UserControl.Resources>
         <FontFamily x:Key="JuraFontFamily">/Fonts/#Jura</FontFamily>
     </UserControl.Resources>
     <Grid>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="180"/>
+            <RowDefinition Height="1.25*"/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Rectangle x:Name="BackTop" Grid.Row="0" Grid.ColumnSpan="2" />
-        <Image x:Name="WeatherImg" Grid.ColumnSpan="2" Source="https://i.imgur.com/MRZNHrm.png"/>
+        <Rectangle x:Name="BackTop" Grid.Row="0" Grid.ColumnSpan="2" Fill="#3D95B9" Opacity="0.5"/>
+        <Image x:Name="WeatherImg" Grid.ColumnSpan="2" Source="https://i.imgur.com/MRZNHrm.png" Margin="12,5,11,5"/>
 
-        <Rectangle x:Name="BackCenter" Grid.Row="1" Grid.ColumnSpan="2" />
-        <Label FontFamily="{DynamicResource JuraFontFamily}" Foreground="White" x:Name="TimeLbl" Content="00:00" HorizontalAlignment="Center" FontSize="30" Grid.ColumnSpan="2" Grid.Row="1" Height="50" VerticalAlignment="Top"/>
-        <Label  FontFamily="{DynamicResource JuraFontFamily}" Foreground="White" x:Name="TempLbl" Content="21*" FontSize="40" HorizontalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="1" Height="70" VerticalAlignment="Bottom"/>
+        <Rectangle x:Name="BackCenter" Grid.Row="1" Grid.ColumnSpan="2" Fill="#3D95B9" Opacity="0.75"/>
+        <Label FontFamily="{DynamicResource JuraFontFamily}" Foreground="White" x:Name="TimeLbl" Content="16:00" HorizontalAlignment="Center" FontWeight="Regular" FontSize="20" Grid.ColumnSpan="2" Height="36" VerticalAlignment="Center" Grid.Row="1"  Width="62" Margin="0,0,0,15"/>
+        <Label FontFamily="{DynamicResource JuraFontFamily}" Foreground="White" x:Name="TempLbl" Content="21°" FontSize="26" HorizontalAlignment="Center" Grid.ColumnSpan="2" Height="33" VerticalAlignment="Top" Grid.Row="1" Width="50" Margin="5,23,0,0" Grid.RowSpan="2"/>
 
-        <Rectangle x:Name="BackBottom" Grid.Row="2" Grid.ColumnSpan="2"/>
-        <Label  FontFamily="{DynamicResource JuraFontFamily}" Foreground="White" FontSize="30" HorizontalAlignment="Center" Content="Влаж." Grid.Row="2" Height="70" VerticalAlignment="Top"/>
-        <Label Grid.Row="2" FontFamily="{DynamicResource JuraFontFamily}" Foreground="White" FontSize="40" HorizontalAlignment="Center" Content="21*" Height="70" VerticalAlignment="Bottom" />
+        <Rectangle x:Name="BackBottom" Grid.Row="2" Grid.ColumnSpan="2" Fill="#3D95B9" Opacity="0.5"/>
+        <Label  FontFamily="{DynamicResource JuraFontFamily}" Foreground="White" FontSize="16" FontWeight="Regular" HorizontalAlignment="Center" Content="Влаж." Grid.Row="2" Height="47" VerticalAlignment="Top"/>
+        <Label Grid.Row="2" FontFamily="{DynamicResource JuraFontFamily}" Foreground="White" FontSize="16" HorizontalAlignment="Center" Content="21°" Height="25" VerticalAlignment="Top" Margin="0,22,0,0" />
 
-        <Label  FontFamily="{DynamicResource JuraFontFamily}" Foreground="White" FontSize="30" HorizontalAlignment="Center" Content="Ощущ." Grid.Row="2" Grid.Column="1" Height="70" VerticalAlignment="Top"/>
-        <Label Grid.Row="2" Grid.Column="1" FontFamily="{DynamicResource JuraFontFamily}" Foreground="White" FontSize="40" HorizontalAlignment="Center" Content="21*" Height="70" VerticalAlignment="Bottom" />
+        <Label  FontFamily="{DynamicResource JuraFontFamily}" Foreground="White" FontSize="16" FontWeight="Regular" HorizontalAlignment="Center" Content="Ощущ." Grid.Row="2" Grid.Column="1" Height="52" VerticalAlignment="Center"/>
+        <Label Grid.Row="2" Grid.Column="1" FontFamily="{DynamicResource JuraFontFamily}" Foreground="White" FontSize="16" HorizontalAlignment="Center" Content="21°" Height="25" VerticalAlignment="Top" Margin="0,22,0,0" />
     </Grid>
 </UserControl>

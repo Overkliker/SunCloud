@@ -1,12 +1,101 @@
-﻿<Window x:Class="SunCloud.View.Main"
+﻿<Window x:Class="SunCloud.Main"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SunCloud.View"
+        xmlns:cards="clr-namespace:ElementsForInterface;assembly=ElementsForInterface"
+        xmlns:local="clr-namespace:SunCloud"
         mc:Ignorable="d"
-        Title="Main" Height="450" Width="800">
+        Icon="https://i.imgur.com/ov43v35.png"
+        Title="Погода"
+        WindowStartupLocation="CenterScreen"
+
+        ResizeMode="CanResizeWithGrip"
+        Width="1500" Height="850" 
+        WindowStyle="None" AllowsTransparency="True" MouseLeftButtonDown="Window_MouseLeftButtonDown">
     <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="459*"></ColumnDefinition>
+            <ColumnDefinition Width="44*"></ColumnDefinition>
+            <ColumnDefinition Width="949*"/>
+            <ColumnDefinition Width="48*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="76*"></RowDefinition>
+            <RowDefinition Height="491*"></RowDefinition>
+            <RowDefinition Height="283*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <Image Grid.ColumnSpan="4" Grid.RowSpan="3" Source="https://i.imgur.com/5hhbL6m.png" Stretch="Fill"/>
+
+        <Rectangle Fill="#F8C5B4" Grid.RowSpan="3" Grid.Column="0" Opacity="0.50"></Rectangle>
+
+        <Rectangle Fill="#3D95B9" Height="2" Width="404" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,74,0,0" />
+
+        <TextBlock Text="Северобайкальск" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF3D95B9" FontFamily="{DynamicResource JuraFontFamily}" FontWeight="Bold" FontSize="36" Height="36" Width="332"/>
+
+        <Rectangle Fill="#FFFFFF" Height="2" Width="466" Grid.Column="2" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+        <TextBlock Text="Погода"  Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FFFFFF" FontFamily="{DynamicResource JuraFontFamily}" FontWeight="Bold" FontSize="36" Height="36" Width="130"></TextBlock>
+
+        <TextBlock Text="Настройки"  Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="#FFFFFF" FontFamily="{DynamicResource JuraFontFamily}" FontWeight="Bold" FontSize="36" Height="36" Width="198"></TextBlock>
+
+        <Rectangle Fill="#FFFFFF" Height="2" Width="465" Grid.Column="2" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Right" ></Rectangle>
+
+        <Image Source="https://i.imgur.com/1yZhauT.png" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" VerticalAlignment="Top" Margin="0,35,170,0" Height="704"></Image>
+
+        <TextBlock Text="Ясно. 21° Ощущается как 25°" TextWrapping="Wrap" TextAlignment="Right" Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="#3D95B9" FontFamily="{DynamicResource JuraFontFamily}" FontWeight="Bold" FontSize="26" Height="80" Margin="211,59,0,0" Width="216"/>
+
+        <TextBlock Text="16:00" TextWrapping="Wrap" TextAlignment="Right" Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="#3D95B9" FontFamily="{DynamicResource JuraFontFamily}" FontWeight="Bold" FontSize="20" Height="21" Margin="36,281,0,0" Width="62"/>
+        <TextBlock Text="Ясно. 21° Ощущается как 25°" TextWrapping="Wrap" TextAlignment="Left" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="#3D95B9" FontFamily="{DynamicResource JuraFontFamily}" FontWeight="Regular" FontSize="20" Height="44" Margin="190,270,0,0" Width="182"/>
+
+        <TextBlock Text="17:00" TextWrapping="Wrap" TextAlignment="Right" Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="#3D95B9" FontFamily="{DynamicResource JuraFontFamily}" FontWeight="Bold" FontSize="20" Height="21" Margin="36,444,0,0" Width="62"/>
+        <TextBlock Text="Переменная облачность. 20° Ощущается как 19°" TextWrapping="Wrap" TextAlignment="Left" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="#3D95B9" FontFamily="{DynamicResource JuraFontFamily}" FontWeight="Regular" FontSize="20" Height="67" Margin="190,421,0,0" Width="196"/>
+
+        <TextBlock Text="18:00" TextWrapping="Wrap" TextAlignment="Right" Grid.Column="0" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="#3D95B9" FontFamily="{DynamicResource JuraFontFamily}" FontWeight="Bold" FontSize="20" Height="21" Margin="36,106,0,0" Width="62"/>
+        <TextBlock Text="Дождь. 19° Ощущается как 15°" TextWrapping="Wrap" TextAlignment="Left" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="#3D95B9" FontFamily="{DynamicResource JuraFontFamily}" FontWeight="Regular" FontSize="20" Height="48" Margin="190,93,0,0" Width="196"/>
+
+        <Rectangle Fill="#F8C5B4" Grid.Column="2" Grid.Row="1" VerticalAlignment="Top" Height="101" Opacity="0.50" Margin="0,20,0,0"></Rectangle>
+
+        <TextBlock Foreground="#87B6CA" Text="21°" Grid.Column="2" Grid.Row="1" FontFamily="{DynamicResource JuraFontFamily}" FontWeight="Regular" FontSize="64" Margin="20,40,834,392"></TextBlock>
+        <Rectangle Fill="#FFFFFF" Grid.Column="2" Grid.Row="1" Height="67.5" Width="1" Margin="134,35,814,389"></Rectangle>
+
+
+        <StackPanel Grid.Column="2" Grid.Row="1" Margin="146,35,-1,421" Orientation="Horizontal" >
+            <TextBlock Foreground="#FFFFFF" Text="Ощущение:" Grid.Column="2" Grid.Row="1" FontFamily="{DynamicResource JuraFontFamily}" FontWeight="Bold" FontSize="24" Margin="0,0,12,0"></TextBlock>
+            <TextBlock Foreground="#FFFFFF" Text="Мин." Grid.Column="2" Grid.Row="1" FontFamily="{DynamicResource JuraFontFamily}" FontWeight="Bold" FontSize="24" Margin="0,0,12,0"></TextBlock>
+            <TextBlock Foreground="#FFFFFF" Text="Макс." Grid.Column="2" Grid.Row="1" FontFamily="{DynamicResource JuraFontFamily}" FontWeight="Bold" FontSize="24" Margin="0,0,15,0"></TextBlock>
+            <TextBlock Foreground="#FFFFFF" Text="Давление:" Grid.Column="2" Grid.Row="1" FontFamily="{DynamicResource JuraFontFamily}" FontWeight="Bold" FontSize="24" Margin="0,0,12,0"></TextBlock>
+            <TextBlock Foreground="#FFFFFF" Text="Влажность:" Grid.Column="2" Grid.Row="1" FontFamily="{DynamicResource JuraFontFamily}" FontWeight="Bold" FontSize="24" Margin="0,0,12,0"></TextBlock>
+            <TextBlock Foreground="#FFFFFF" Text="Ветер м\с:" Grid.Column="2" Grid.Row="1" FontFamily="{DynamicResource JuraFontFamily}" FontWeight="Bold" FontSize="24" Margin="0,0,12,0"></TextBlock>
+            <TextBlock Foreground="#FFFFFF" Text="Ветер°:" Grid.Column="2" Grid.Row="1" FontFamily="{DynamicResource JuraFontFamily}" FontWeight="Bold" FontSize="24"></TextBlock>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" Grid.Row="1" Margin="146,73,47,383" Orientation="Horizontal" Grid.ColumnSpan="2" >
+            <TextBlock Foreground="#FFFFFF" Text="21°" Grid.Column="2" Grid.Row="1" FontFamily="{DynamicResource JuraFontFamily}" FontWeight="Regular" FontSize="24" Margin="45,0,12,0"></TextBlock>
+            <TextBlock Foreground="#FFFFFF" Text="21°" Grid.Column="2" Grid.Row="1" FontFamily="{DynamicResource JuraFontFamily}" FontWeight="Regular" FontSize="24" Margin="57,0,12,0"></TextBlock>
+            <TextBlock Foreground="#FFFFFF" Text="21°" Grid.Column="2" Grid.Row="1" FontFamily="{DynamicResource JuraFontFamily}" FontWeight="Regular" FontSize="24" Margin="22,0,15,0"></TextBlock>
+            <TextBlock Foreground="#FFFFFF" Text="21 мм рт. ст." Grid.Column="2" Grid.Row="1" FontFamily="{DynamicResource JuraFontFamily}" FontWeight="Regular" FontSize="24" Margin="8,0,12,0" Width="141"></TextBlock>
+            <TextBlock Foreground="#FFFFFF" Text="20%" Grid.Column="2" Grid.Row="1" FontFamily="{DynamicResource JuraFontFamily}" FontWeight="Regular" FontSize="24" Margin="35,0,12,0"></TextBlock>
+            <TextBlock Foreground="#FFFFFF" Text="7 м\с" Grid.Column="2" Grid.Row="1" FontFamily="{DynamicResource JuraFontFamily}" FontWeight="Regular" FontSize="24" Margin="85,0,12,0"></TextBlock>
+            <TextBlock Foreground="#FFFFFF" Text="290" Grid.Column="2" Grid.Row="1" FontFamily="{DynamicResource JuraFontFamily}" FontWeight="Regular" FontSize="24" Margin="55,0,0,0"></TextBlock>
+        </StackPanel>
+
         
+        
+        <Rectangle Fill="#F8C5B4" Grid.Column="2" Grid.Row="1" VerticalAlignment="Top" Height="208" Opacity="0.50" Margin="0,160,0,0"></Rectangle>
+        <StackPanel Grid.Column="2" Grid.Row="1" Margin="10,173,10,142" Orientation="Horizontal">
+            <cards:Unit Margin="15,0,0,0"></cards:Unit>
+            <cards:Unit Margin="5,0,0,0"></cards:Unit>
+            <cards:Unit Margin="15,0,0,0"></cards:Unit>
+            <cards:Unit Margin="15,0,0,0"></cards:Unit>
+            <cards:Unit Margin="15,0,0,0"></cards:Unit>
+            <cards:Unit Margin="15,0,0,0"></cards:Unit>
+            <cards:Unit Margin="15,0,0,0"></cards:Unit>
+            <cards:Unit Margin="15,0,0,0"></cards:Unit>
+            <cards:Unit Margin="15,0,0,0"></cards:Unit>
+
+        </StackPanel>
     </Grid>
 </Window>

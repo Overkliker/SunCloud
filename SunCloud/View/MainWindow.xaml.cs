@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SunCloud;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Windows.Shapes; 
 
 namespace SunCloud
 {
@@ -23,6 +24,8 @@ namespace SunCloud
         public MainWindow()
         {
             InitializeComponent();
+            Main main = new Main();
+            main.Show();
         }
 
 
@@ -40,17 +43,18 @@ namespace SunCloud
 
         //Кнопка полноэкранного режима
 
+        private void FullscreanBtn_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (WindowState == WindowState.Maximized)
+                WindowState = WindowState.Normal;
+            else WindowState = WindowState.Maximized;
+        }
+
         //Кнопка закрытия окна
         private void btnClose_Click(object sender, RoutedEventArgs e) 
         {
             Application.Current.Shutdown();
         }
 
-        private void FullscreanBtn_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (WindowState == WindowState.Maximized)
-                WindowState = WindowState.Normal;
-            else WindowState = WindowState.Maximized;
-        }
     }
 }
