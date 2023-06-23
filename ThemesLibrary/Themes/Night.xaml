@@ -1,0 +1,7 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Brush x:Key="MainColor">#F8C5B4</Brush>
+    <Brush x:Key="SecondColor">#591E6E</Brush>
+    <Brush x:Key="FocusedColor">#F8C5B4</Brush>
+    <Brush x:Key="BackgroundColor">#FFF</Brush>
+</ResourceDictionary>
