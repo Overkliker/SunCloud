@@ -27,8 +27,6 @@ namespace SunCloud
         public MainWindow()
         {
             InitializeComponent();
-            Main main = new Main();
-            main.Show();
         }
 
 
@@ -59,5 +57,14 @@ namespace SunCloud
             Application.Current.Shutdown();
         }
 
+        private void NextPage_Click(object sender, RoutedEventArgs e)
+        {
+            if (CityPlace.Text != "" && CityPlace.Text != "Введите город")
+            {
+                Main main = new Main(CityPlace.Text);
+                main.Show();
+            }
+
+        }
     }
 }

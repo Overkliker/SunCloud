@@ -88,18 +88,11 @@
                    Height="1"/>
 
 
-        <!--Эти два наказаны и будут заменены на кнопки-->
-        <Rectangle Grid.Row="3"
-                   Grid.Column="2"
-                   Fill="#87B6CA"
-                   Opacity="0.5"
-                   MinHeight="25"/>
+        <!--заменены на кнопки-->
 
-        <Rectangle Grid.Row="5"
-                   Grid.Column="2"
-                   Fill="#87B6CA"
-                   MinHeight="25"/>
+        <TextBox x:Name="CityPlace" TextAlignment="Center" VerticalContentAlignment="Center" Text="Ваш город" BorderBrush="#87B6CA"  Foreground="White" FontFamily="{DynamicResource JuraFontFamily}" FontSize="15" Background="#87B6CA" Width="174px" Height="25px" Grid.Column="2" Grid.Row="3"/>
 
+        <Button x:Name="NextPage" Click="NextPage_Click" BorderBrush="#87B6CA" Content="Узнать погоду" Foreground="White" FontFamily="{DynamicResource JuraFontFamily}" FontSize="15" Background="#87B6CA" Width="174px" Height="25px" Grid.Column="2" Grid.Row="5"/>
 
     </Grid>
 </Window>
