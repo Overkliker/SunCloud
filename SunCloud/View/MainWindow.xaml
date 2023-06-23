@@ -37,17 +37,25 @@
 
         <!-- Фоточка заднего фона -->
         <Image Grid.ColumnSpan="5" Grid.RowSpan="8" Source="https://i.imgur.com/5hhbL6m.png" Stretch="Fill"/>
-
+        
         <!-- Тайтл бар. Тот что с кнопочками закрыть, свернуть, фулскрин-->
-        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="4" Height="40" Width="120">
+        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="4" Height="40" Width="114">
 
-            <Button x:Name="CollapseBtn" Content="-" Width="40" Height="40" Click="CollapseBtn_Click"
+            <Button x:Name="CollapseBtn" Width="40" Height="40" Click="CollapseBtn_Click"
                     BorderBrush="Transparent" Background="Transparent"/>
-            <cards:Exit x:Name="FullscreanBtn" Width="40" Height="40" />
-            <Button x:Name="btnClose" Content="X" Width="40" Height="40" Click="btnClose_Click"
+            <Button x:Name="FullscreanBtn" Width="40" Height="40" Click="FullscreanBtn_Click"
+                    BorderBrush="Transparent" Background="Transparent"/>
+            <Button x:Name="btnClose" Width="40" Height="40" Click="btnClose_Click"
                     BorderBrush="Transparent" Background="Transparent"/>
 
         </StackPanel>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="4" Height="40" Width="120">
+            <cards:Exit Grid.Column="4" HorizontalAlignment="Right" VerticalAlignment="Top" Width="40" Height="40"/>
+            <cards:FullScreen Width="40" Height="40"/>
+            <cards:Colapse Width="40" Height="40"/>
+        </StackPanel>
+
 
         <!--Здеся буит главный блок и его тень-->
         <Border

@@ -38,7 +38,13 @@ namespace SunCloud
             WindowState = WindowState.Minimized;
         }
 
-        //Кнопка полноэкранного режима
+        //Кнопка полноэкранного режим
+        private void FullscreanBtn_Click(object sender, MouseButtonEventArgs e)
+        {
+            if (WindowState == WindowState.Maximized)
+                WindowState = WindowState.Normal;
+            else WindowState = WindowState.Maximized;
+        }
 
         //Кнопка закрытия окна
         private void btnClose_Click(object sender, RoutedEventArgs e) 
@@ -46,11 +52,9 @@ namespace SunCloud
             Application.Current.Shutdown();
         }
 
-        private void FullscreanBtn_MouseDown(object sender, MouseButtonEventArgs e)
+        private void FullscreanBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (WindowState == WindowState.Maximized)
-                WindowState = WindowState.Normal;
-            else WindowState = WindowState.Maximized;
+
         }
     }
 }
