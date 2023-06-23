@@ -10,18 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using LiveCharts;
-using LiveCharts.Wpf;
 
-namespace SunCloud.View
+namespace ElementsForInterface
 {
     /// <summary>
-    /// Логика взаимодействия для Main.xaml
+    /// Логика взаимодействия для Btn.xaml
     /// </summary>
-    public partial class Main : Window
+    public partial class Btn : UserControl
     {
-        public Main()
+        public Btn()
         {
             InitializeComponent();
         }
