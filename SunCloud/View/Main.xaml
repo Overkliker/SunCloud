@@ -10,7 +10,7 @@
         Icon="https://i.imgur.com/ov43v35.png"
         Title="Погода"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="CanResizeWithGrip"
+        ResizeMode="NoResize"
         Width="1500" Height="850" 
         WindowStyle="None" AllowsTransparency="True" MouseLeftButtonDown="Window_MouseLeftButtonDown"> 
     <Grid>
