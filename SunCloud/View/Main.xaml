@@ -102,11 +102,11 @@
         <Rectangle Fill="#F8C5B4" Grid.Column="2" Grid.Row="2" VerticalAlignment="Top" Height="251" Opacity="0.50" Margin="0,20,0,0">
             
         </Rectangle>
-        <Button BorderBrush="#3D95B9" Margin="20 30" Content="Температура" Foreground="White" FontFamily="{DynamicResource JuraFontFamily}" FontSize="20" Background="#3D95B9" Width="300px" Height="38.55px" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="2" Grid.Row="2"/>
-        <Button BorderBrush="#87B6CA" Margin="20 30" Content="Ощущается как" Foreground="White" FontFamily="{DynamicResource JuraFontFamily}" FontSize="20" Background="#87B6CA" Width="300px" Height="38.55px" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="2" Grid.Row="2"/>
-        <Button BorderBrush="#87B6CA" Margin="20 30" Content="Давление" Foreground="White" FontFamily="{DynamicResource JuraFontFamily}" FontSize="20" Background="#87B6CA" Width="300px" Height="38.55px" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="2" Grid.Row="2"/>
+        <Button x:Name="TempBtn" Click="TempBtn_Click" BorderBrush="#3D95B9" Margin="20 30" Content="Температура" Foreground="White" FontFamily="{DynamicResource JuraFontFamily}" FontSize="20" Background="#3D95B9" Width="300px" Height="38.55px" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="2" Grid.Row="2"/>
+        <Button x:Name="FillsLike" Click="FillsLike_Click" BorderBrush="#87B6CA" Margin="20 30" Content="Ощущается как" Foreground="White" FontFamily="{DynamicResource JuraFontFamily}" FontSize="20" Background="#87B6CA" Width="300px" Height="38.55px" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="2" Grid.Row="2"/>
+        <Button x:Name="BarsBtn" Click="BarsBtn_Click" BorderBrush="#87B6CA" Margin="20 30" Content="Давление" Foreground="White" FontFamily="{DynamicResource JuraFontFamily}" FontSize="20" Background="#87B6CA" Width="300px" Height="38.55px" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="2" Grid.Row="2"/>
         
-        <lvc:CartesianChart Margin="0 70 0 0" Grid.Row="2" Grid.Column="2" Height="200" Series="{Binding SeriesCollection}" LegendLocation="Right" >
+        <lvc:CartesianChart x:Name="Graph" Margin="0 70 0 0" Grid.Row="2" Grid.Column="2" Height="200" Series="{Binding SeriesCollection}" LegendLocation="Right" >
             <lvc:CartesianChart.AxisY>
                 <lvc:Axis Title="Temp" LabelFormatter="{Binding YFormatter}"></lvc:Axis>
             </lvc:CartesianChart.AxisY>

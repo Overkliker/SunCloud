@@ -70,5 +70,125 @@ namespace SunCloud
         {
             DragMove();
         }
+
+        private void TempBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Citi.Text = globalCity;
+            Root nowData = Serializer.Get(globalCity);
+            var converter = new System.Windows.Media.BrushConverter();
+
+
+            BarsBtn.Background = (Brush)converter.ConvertFromString("#87B6CA");
+            BarsBtn.BorderBrush = (Brush)converter.ConvertFromString("#87B6CA");
+
+            TempBtn.Background = (Brush)converter.ConvertFromString("#3D95B9");
+            TempBtn.BorderBrush = (Brush)converter.ConvertFromString("#3D95B9");
+
+            FillsLike.Background = (Brush)converter.ConvertFromString("#87B6CA");
+            FillsLike.BorderBrush = (Brush)converter.ConvertFromString("#87B6CA");
+
+            List<Hour> hours = nowData.forecast.forecastday[0].hour;
+            ChartValues<double> values = new ChartValues<double>();
+            List<string> times = new List<string>();
+
+            foreach (Hour hour in hours)
+            {
+                DateTime enteredDate = DateTime.Parse(hour.time);
+                string time = enteredDate.TimeOfDay.ToString().Substring(0, 5);
+                times.Add(time);
+                values.Add(hour.temp_c);
+            }
+
+            Graph.Series = new SeriesCollection
+            {
+                new LineSeries
+                {
+                    Values = values
+                }
+            };
+
+            Labels = times;
+            DataContext = this;
+        }
+
+        private void FillsLike_Click(object sender, RoutedEventArgs e)
+        {
+            Citi.Text = globalCity;
+            Root nowData = Serializer.Get(globalCity);
+            var converter = new System.Windows.Media.BrushConverter();
+
+
+            BarsBtn.Background = (Brush)converter.ConvertFromString("#87B6CA");
+            BarsBtn.BorderBrush = (Brush)converter.ConvertFromString("#87B6CA");
+
+            TempBtn.Background = (Brush)converter.ConvertFromString("#87B6CA");
+            TempBtn.BorderBrush = (Brush)converter.ConvertFromString("#87B6CA");
+
+            FillsLike.Background = (Brush)converter.ConvertFromString("#3D95B9");
+            FillsLike.BorderBrush = (Brush)converter.ConvertFromString("#3D95B9");
+
+            List<Hour> hours = nowData.forecast.forecastday[0].hour;
+            ChartValues<double> values = new ChartValues<double>();
+            List<string> times = new List<string>();
+
+            foreach (Hour hour in hours)
+            {
+                DateTime enteredDate = DateTime.Parse(hour.time);
+                string time = enteredDate.TimeOfDay.ToString().Substring(0, 5);
+                times.Add(time);
+                values.Add(hour.feelslike_c);
+            }
+
+            Graph.Series = new SeriesCollection
+            {
+                new LineSeries
+                {
+                    Values = values
+                }
+            };
+
+            Labels = times;
+            DataContext = this;
+        }
+
+        private void BarsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Citi.Text = globalCity;
+            Root nowData = Serializer.Get(globalCity);
+            var converter = new System.Windows.Media.BrushConverter();
+
+
+            BarsBtn.Background = (Brush)converter.ConvertFromString("#3D95B9");
+            BarsBtn.BorderBrush = (Brush)converter.ConvertFromString("#3D95B9");
+
+            TempBtn.Background = (Brush)converter.ConvertFromString("#87B6CA");
+            TempBtn.BorderBrush = (Brush)converter.ConvertFromString("#87B6CA");
+
+            FillsLike.Background = (Brush)converter.ConvertFromString("#87B6CA");
+            FillsLike.BorderBrush = (Brush)converter.ConvertFromString("#87B6CA");
+
+            List<Hour> hours = nowData.forecast.forecastday[0].hour;
+            ChartValues<double> values = new ChartValues<double>();
+            List<string> times = new List<string>();
+
+            foreach (Hour hour in hours)
+            {
+                DateTime enteredDate = DateTime.Parse(hour.time);
+                string time = enteredDate.TimeOfDay.ToString().Substring(0, 5);
+                times.Add(time);
+                values.Add(hour.pressure_mb);
+            }
+
+            Graph.Series = new SeriesCollection
+            {
+                new LineSeries
+                {
+                    Values = values
+                }
+            };
+
+            Labels = times;
+            DataContext = this;
+        }
     }
 }
