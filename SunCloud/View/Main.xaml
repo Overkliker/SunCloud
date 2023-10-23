@@ -27,6 +27,8 @@
             <RowDefinition Height="283*"></RowDefinition>
         </Grid.RowDefinitions>
 
+        <cards:Exit Grid.Column="4" HorizontalAlignment="Right" VerticalAlignment="Top" Width="40" Height="40" MouseDoubleClick="btnClose_Click" Grid.ZIndex="1"/>
+
 
         <Image Grid.ColumnSpan="4" Grid.RowSpan="3" Source="https://i.imgur.com/5hhbL6m.png" Stretch="Fill"/>
 

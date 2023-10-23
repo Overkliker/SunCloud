@@ -32,7 +32,12 @@ namespace SunCloud
             Chart();
             
         }
-        
+
+        //Кнопка закрытия окна
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
         private void Chart()
         {
             Citi.Text = globalCity;
