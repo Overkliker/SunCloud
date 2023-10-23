@@ -27,6 +27,7 @@ namespace SunCloud
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
 
@@ -42,15 +43,6 @@ namespace SunCloud
             WindowState = WindowState.Minimized;
         }
 
-        //Кнопка полноэкранного режима
-
-        private void FullscreanBtn_Click_1(object sender, RoutedEventArgs e)
-        {
-            if (WindowState == WindowState.Maximized)
-                WindowState = WindowState.Normal;
-            else WindowState = WindowState.Maximized;
-        }
-
         //Кнопка закрытия окна
         private void btnClose_Click(object sender, RoutedEventArgs e) 
         {
@@ -63,8 +55,8 @@ namespace SunCloud
             {
                 Main main = new Main(CityPlace.Text);
                 main.Show();
+                this.Close();
             }
-
         }
     }
 }
